@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html>
  <head>
-     <title>Assignment-06</title>
-     <h1>Pass phrase by Madan Mohan Reddy Pulichintha</h1>
-
+     <title>Assignment-6</title>
+     <h1>Pass phrase by pulichintha madanreddy</h1>
+    <style>
+        form{
+            background-color: rgb(175, 105, 255);
+            border: solid rgb(157, 255, 0);
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <form>
@@ -15,6 +23,9 @@
     
         <input type="button" onclick="processPhrase()" value="Check the phrase">
     </form>
+    <div class="container">
+        <img src="snake.jpg" id="image" class="img-fluid" alt="snake" height="200" width="200" onclick=newImage()>
+    </div>
     <script> 
 
         var correct=0
@@ -34,6 +45,9 @@
                 wrong = wrong +1
                 alert("Access denied")
                 out.innerHTML = "Wrong:" +wrong
+                if (wrong>3){
+                    alert("account locked");
+                }
             }
         }
         </script>
@@ -59,6 +73,27 @@ function resolveForm (){
         out.innerHTML = "Values were not confirmed"
     }
 }
+var currentimage = 1;
+
+function newImage() {
+        switch (currentimage) {
+            case 0:
+                currentImage = currentimage + 1;
+                document.getElementById("image").src = "dog.jpg"
+                break;
+            case 1:
+                currentimage += 1;
+                document.getElementById("image").src = "ape.jpg"
+                break;
+            case 2:
+                currentimage += 1;
+                document.getElementById("image").src = "monkey.jpg"
+                break;
+            default:
+                currentimage = 1
+                document.getElementById("image").src = "dog.jpg"
+        }
+    }
 </script>
 
 </body>
